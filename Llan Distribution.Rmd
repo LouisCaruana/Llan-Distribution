@@ -1,0 +1,52 @@
+---
+title: "Llan Distribution"
+output: github_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Load Packages
+```{r}
+library(sf)
+library(raster)
+library(tidyverse)
+
+```
+
+## Load data 
+```{r}
+Shape <- st_read('Data/NUTS_Level_1_(January_2018)_Boundaries/NUTS_Level_1_(January_2018)_Boundaries.shp')
+Wales <- Shape[Shape$objectid %in% c('10'), ]
+```
+
+```{r fig.width=12, fig.height=12}
+ggplot() + 
+  geom_sf(data = Wales, size = 0.5, color = "black", fill = "cyan1") + 
+  ggtitle("AOI Boundary Plot") + 
+  coord_sf(crs = st_crs(4326))
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
